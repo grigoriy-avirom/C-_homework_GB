@@ -6,6 +6,36 @@ a = -9 b = -3 -> max = -3
 */
 
 /*
+Console.WriteLine("Введите два числа по очереди.");
+Console.WriteLine("");
+Console.WriteLine("Вводите первое число:");
+int numberA = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("Вводите второе число:");
+int numberB = Convert.ToInt32(Console.ReadLine());
+
+if (numberA == numberB)
+{
+    Console.WriteLine($"Оба числа равны: {numberA} !");
+}
+else
+{
+    if (numberA > numberB)
+    {
+        Console.WriteLine($"Число {numberA} больше!");
+    }
+    else
+    {
+        Console.WriteLine($"Число {numberB} больше!");
+    }
+}
+*/
+
+
+
+
+
+
+/*
 Задача 4: Напишите программу, которая принимает на вход три числа и выдаёт максимальное из этих чисел.
 2, 3, 7 -> 7
 44 5 78 -> 78
