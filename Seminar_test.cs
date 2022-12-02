@@ -60,6 +60,7 @@ int div2 = Convert.ToInt32(Console.ReadLine());
 Cratnost(user_num, div1, div2);
 */
 
+/* 
 int DeleteDec()
 {
     int randomNum = new Random().Next(100, 1000);
@@ -72,4 +73,5 @@ int DeleteDec()
     return new_num;
 }
 
-Console.WriteLine($"Your new num is: {DeleteDec()}");
+Console.WriteLine($"Your new num is: {DeleteDec()}"); 
+*/
