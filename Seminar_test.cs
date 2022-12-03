@@ -1,77 +1,119 @@
-/*
-int Digits(int number)
+/* 
+void MetFindSum(int a) // НЕВОЗВРАТНЫЙ МЕТОД
 {
-    int ed = number % 10;
-    int dec = number / 10;
-
-    int result;
-    if (ed > dec)
+    int summa = 0;
+    for (int current = 1; current <= a; current++)
     {
-        return ed;
+        summa += current;
     }
-    else return dec;
-
+    Console.WriteLine($" Summ of elements from 1 to {a} is {summa}");
+}
+Console.WriteLine("Input number: ");
+int user_num = Convert.ToInt32(Console.ReadLine());
+MetFindSum(user_num); 
+*/
+/* 
+int MetFindSum(int a) // ВОЗВРАТНЫЙ МЕТОД
+{
+    int summa = 0;
+    for (int current = 1; current <= a; current++)
+    {
+        summa += current;
+    }
+    return summa;
 }
 
 Console.WriteLine("Input number: ");
 int user_num = Convert.ToInt32(Console.ReadLine());
-int res = Digits(user_num);
 
-Console.WriteLine($"Biggest digit: {res}");
-*/
-/*
-int Digits()
-{
-    int randomNum = new Random().Next(10, 100);
-    Console.WriteLine("Your num: " + randomNum);
+int result = MetFindSum(user_num);
 
-    int ed = randomNum % 10;
-    int dec = randomNum / 10;
-
-    if (ed > dec)
-    {
-        return ed;
-    }
-    else return dec;
-
-}
- Console.WriteLine("Biggest num: " + Digits());
+Console.WriteLine($"Summ of elements from 1 to {user_num} is {result}");
  */
 
-/*
-void Cratnost(int num, int a, int b)
+/* 
+
+int CountOfDigits(int number)
 {
-    if (num % a == 0 && num % b == 0)
+    int current = 1;
+    while (number >= 10)
     {
-        Console.WriteLine($"Your num {num} is multiple {a} and {b}");
+        current++;
+        number = number / 10;
     }
-    else Console.WriteLine($"Your num {num} is not multiple {a} and {b}");
+    return current;
 }
 
-Console.WriteLine("Enter num: ");
+Console.WriteLine("Input number: ");
 int user_num = Convert.ToInt32(Console.ReadLine());
 
-Console.WriteLine("Enter 1st div: ");
-int div1 = Convert.ToInt32(Console.ReadLine());
+int count_digit;
+int user_num1 = (-1) * user_num;
+if (user_num >= 0)
+    count_digit = CountOfDigits(user_num);
+else
+    count_digit = CountOfDigits(user_num1);
 
-Console.WriteLine("Enter 2nd div: ");
-int div2 = Convert.ToInt32(Console.ReadLine());
-
-Cratnost(user_num, div1, div2);
-*/
+Console.WriteLine($"Entered num {user_num} -> {count_digit}");
+ */
 
 /* 
-int DeleteDec()
+void Factorial(int n)
 {
-    int randomNum = new Random().Next(100, 1000);
-    Console.WriteLine("Your num is: " + randomNum);
-
-    int fut_dec = randomNum / 100;
-    int fut_ed = randomNum % 10;
-
-    int new_num = fut_dec * 10 + fut_ed;
-    return new_num;
+    int multi = 1;
+    for (int cur = 1; cur <= n; cur++)
+    {
+        multi *= cur;
+    }
+    Console.WriteLine($"{n} -> {multi}");
 }
 
-Console.WriteLine($"Your new num is: {DeleteDec()}"); 
-*/
+Console.WriteLine("Input num: ");
+int number = Convert.ToInt32(Console.ReadLine());
+
+if (number <= 0)
+{
+    while (number <= 0)
+    {
+        Console.WriteLine("pls, input positive num");
+        number = Convert.ToInt32(Console.ReadLine());
+    }
+}
+
+Factorial(number);
+ */
+
+/* int[] CreateNewArray(int size, int min, int max)
+{
+    int[] array = new int[size];
+    for (int i = 0; i < size; i++)
+        array[i] = new Random().Next(min, max + 1); // (min, max+1)
+    return array;
+}
+
+void ShowArray(int[] array)
+{
+    for (int i = 0; i < array.Length; i++)
+    {
+        Console.Write(array[i] + " ");
+    }
+}
+
+Console.Write("Input count of elements: ");
+int count_of_elem = Convert.ToInt32(Console.ReadLine());
+
+Console.Write("Input max value of elements: ");
+int maxValue = Convert.ToInt32(Console.ReadLine());
+
+Console.Write("Input min value of elements: ");
+int minValue = Convert.ToInt32(Console.ReadLine());
+
+/* int[] array1 = CreateNewArray(count_of_elem);
+ShowArray(array1); */
+/*
+ShowArray(CreateNewArray(count_of_elem, minValue, maxValue));
+
+ */
+
+
+
