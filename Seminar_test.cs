@@ -114,6 +114,93 @@ ShowArray(array1); */
 ShowArray(CreateNewArray(count_of_elem, minValue, maxValue));
 
  */
+/* 
 
+int[] CreateRandomArray(int size, int minValue, int maxValue)
+{
+    int[] newArray = new int[size];
 
+    for (int i = 0; i < size; i++)
+        newArray[i] = new Random().Next(minValue, maxValue + 1);
+    return newArray;
+}
 
+void ShowArray(int[] array)
+{
+    for (int i = 0; i < array.Length; i++)
+        Console.Write(array[i] + " ");
+    Console.WriteLine();
+}
+
+int FindSummPos(int[] array)
+{
+    int sumPos = 0;
+    for (int i = 0; i < array.Length; i++)
+        if (array[i] > 0)
+            sumPos += array[i];
+    return sumPos;
+}
+
+int FindSumNeg(int[] array)
+{
+    int sumNeg = 0;
+    for (int i = 0; i < array.Length; i ++)
+        if (array[i] < 0)
+            sumNeg += array[i];
+    return sumNeg;
+}
+
+int size_array = 12;
+int minValue = -9;
+int maxValue = 9;
+
+int [] createdArray = CreateRandomArray(size_array, minValue, maxValue);
+
+ShowArray(createdArray);
+Console.WriteLine($"Summ of positive elements is {FindSummPos(createdArray)}");
+int resaltNeg = FindSumNeg(createdArray);
+Console.WriteLine($"Summ of negative elements is {resaltNeg}");
+ */
+
+/* 
+int[] CreateRandomArray(int size, int minValue, int maxValue)
+{
+    int[] newArray = new int[size];
+
+    for (int i = 0; i < size; i++)
+        newArray[i] = new Random().Next(minValue, maxValue + 1);
+    return newArray;
+}
+
+void ShowArray(int[] array)
+{
+    for (int i = 0; i < array.Length; i++)
+        Console.Write(array[i] + " ");
+    Console.WriteLine();
+}
+
+int FindMultiPar(int[] arrayCreated, int size2)
+{
+    int[] arrayMulti = new int[size2];
+    for (int i = 0; i < arrayCreated.Length / 2; i++)
+    {
+        arrayMulti[i] = array[0] * arrayCreated[arrayCreated.Length - 1 - i];
+    }
+    return
+}
+
+Console.WriteLine("Input size of array: ");
+int array_size = Convert.ToInt32(Console.ReadLine());
+
+Console.WriteLine("Input min possible val in array: ");
+int minValue = Convert.ToInt32(Console.ReadLine());
+
+Console.WriteLine("Input max possible val in array: ");
+int maxValue = Convert.ToInt32(Console.ReadLine());
+
+int size2;
+if (array_size % 2 == 0)
+    size2 = array_size / 2;
+else size2 = (array_size + 1) / 2;
+
+ */
