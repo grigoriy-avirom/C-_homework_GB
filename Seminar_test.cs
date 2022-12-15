@@ -312,6 +312,7 @@ else Console.WriteLine("Triangle not exist!");
 // ДЕСЯТИЧНОЕ В ДВОИЧНОЕ
 
 /* 
+
 string BinarSyst(int num)
 {
     string binResult = string.Empty;
@@ -330,3 +331,148 @@ string res = BinarSyst(number);
 Console.WriteLine($"Your number {number} in binar syst is {res}");
 
  */
+
+
+
+// ЗАДАЙТЕ ДВУМЕРНЫЙ МАССИВ m x n С ЦЕЛЫМИ ЧИСЛАМИ
+
+/* 
+int[,] Create2dArray(int row, int column, int minVal, int maxVal)
+{
+    int[,] created2dArray = new int[row, column];
+
+    for (int i = 0; i < row; i++)
+        for (int j = 0; j < column; j++)
+            created2dArray[i, j] = new Random().Next(minVal, maxVal + 1);
+    return created2dArray;
+}
+
+void Show2dArray(int[,] array)
+{
+    for (int i = 0; i < array.GetLength(0); i++)
+    {
+        for (int j = 0; j < array.GetLength(1); j++)
+        {
+            Console.Write(array[i, j] + " ");
+        }
+        Console.WriteLine();
+    }
+    Console.WriteLine();
+}
+
+Console.Write("Input count of rows: ");
+int rows = Convert.ToInt32(Console.ReadLine());
+Console.Write("Input count of columns: ");
+int columns = Convert.ToInt32(Console.ReadLine());
+
+Console.Write("Input min possible value: ");
+int min = Convert.ToInt32(Console.ReadLine());
+Console.Write("Input max possible value: ");
+int max = Convert.ToInt32(Console.ReadLine());
+
+int [,] newArray = Create2dArray(rows, columns, min, max);
+Console.WriteLine();
+Show2dArray(newArray);
+*/
+
+// ЗАДАЙТЕ 2Д МАССИВ Amn = m+n
+
+// ЗАДАЙТЕ 2Д МАССИВ, ЧЕТНЫЕ ЭЛЕМЕНТЫ ЗАМЕНИТЬ НА ИХ КВАДРАТЫ
+// 0,2 0,4 2,2 2,4 ...
+
+/* 
+
+int[,] Create2dArray(int row, int column, int minVal, int maxVal)
+{
+    int[,] created2dArray = new int[row, column];
+
+    for (int i = 0; i < row; i++)
+        for (int j = 0; j < column; j++)
+            created2dArray[i, j] = new Random().Next(minVal, maxVal + 1);
+    return created2dArray;
+}
+
+void Show2dArray(int[,] array)
+{
+    for (int i = 0; i < array.GetLength(0); i++)
+    {
+        for (int j = 0; j < array.GetLength(1); j++)
+        {
+            Console.Write(array[i, j] + " ");
+        }
+        Console.WriteLine();
+    }
+    Console.WriteLine();
+}
+
+int[,] EvenNumbers(int[,] array)
+{
+    for (int i = 0; i < array.GetLength(0); i++)
+    {
+        for (int j = 0; j < array.GetLength(1); j++)
+        {
+            if (i % 2 == 0 && j % 2 == 0)
+            {
+                array[i, j] = array[i, j] * array[i, j];
+            }
+        }
+    }
+    return array;
+}
+int[,] created2dArray = Create2dArray(5, 6, -5, 10);
+
+Show2dArray(created2dArray);
+EvenNumbers(created2dArray);
+Show2dArray(created2dArray);
+*/
+
+
+// НАЙДИТЕ СУММУ ЭЛЕМЕНТОВ ГЛАВНОЙ ДИАГОНАЛИ
+
+/* 
+int[,] Create2dArray(int row, int column, int minVal, int maxVal)
+{
+    int[,] created2dArray = new int[row, column];
+
+    for (int i = 0; i < row; i++)
+        for (int j = 0; j < column; j++)
+            created2dArray[i, j] = new Random().Next(minVal, maxVal + 1);
+    return created2dArray;
+}
+
+void Show2dArray(int[,] array)
+{
+    for (int i = 0; i < array.GetLength(0); i++)
+    {
+        for (int j = 0; j < array.GetLength(1); j++)
+        {
+            Console.Write(array[i, j] + " ");
+        }
+        Console.WriteLine();
+    }
+    Console.WriteLine();
+}
+
+int SumNumber(int[,] array)
+{
+    int sum = 0;
+    for (int i = 0; i < array.GetLength(0); i++)
+    {
+        for (int j = 0; j < array.GetLength(1); j++)
+        {
+            if (i == j)
+            {
+                sum = sum + array[i, j];
+            }
+        }
+    }
+    return sum;
+}
+
+int[,] newArray = Create2dArray(3, 3, 0, 3);
+Show2dArray(newArray);
+int sum = SumNumber(newArray);
+Console.Write($"{sum}");
+ */
+
+
