@@ -476,3 +476,209 @@ Console.Write($"{sum}");
  */
 
 
+
+//ПОМЕНЯТЬ МЕСТАМИ ДВЕ СТРОКИ В ДВУМЕРНОМ МАССИВЕ
+/* 
+int[,] Create2dArray(int rows, int columns, int min, int max)
+{
+    int[,] newArray = new int[rows, columns];
+    for (int i = 0; i < rows; i++)
+    {
+        for (int j = 0; j < columns; j++)
+        {
+            newArray[i, j] = new Random().Next(min, max + 1);
+        }
+    }
+    return newArray;
+}
+
+void ShowArray(int[,] array)
+{
+    for (int i = 0; i < array.GetLength(0); i++)
+    {
+        for (int j = 0; j < array.GetLength(1); j++)
+        {
+            Console.Write(array[i, j] + " ");
+        }
+        Console.WriteLine();
+    }
+    Console.WriteLine();
+}
+
+int[,] ChangeArrayRows(int[,] array1, int row1, int row2)
+{
+    if (row1 >= 0 && row1 < array1.GetLength(0) && row2 >= 0 && row2 < array1.GetLength(0) && row1 != row2)
+    {
+
+        for (int j = 0; j < array1.GetLength(1); j++)
+        {
+            int temp = array1[row1, j];
+            array1[row1, j] = array1[row2, j];
+            array1[row2, j] = temp;
+        }
+    }
+    else Console.WriteLine("Incorrect input!");
+    return array1;
+}
+
+Console.Write("Input number of rows: ");
+int user_rows = Convert.ToInt32(Console.ReadLine());
+Console.Write("Input number of columns: ");
+int user_columns = Convert.ToInt32(Console.ReadLine());
+
+Console.Write("Input min possible value: ");
+int user_minValue = Convert.ToInt32(Console.ReadLine());
+Console.Write("Input max possible value: ");
+int user_maxValue = Convert.ToInt32(Console.ReadLine());
+
+Console.Write("Input number of 1st row to remove: ");
+int user_row1 = Convert.ToInt32(Console.ReadLine());
+Console.Write("Input number of 2nd row to remove: ");
+int user_row2 = Convert.ToInt32(Console.ReadLine());
+
+int [,] createdArray = Create2dArray (user_rows, user_columns, user_minValue, user_maxValue);
+ShowArray(createdArray);
+ShowArray(ChangeArrayRows(createdArray, user_row1, user_row2));
+
+ */
+
+
+//ПРОГРАММА ЗАМЕНЯЮЩАЯ СТРОКИ НА СТОЛБЦЫ
+
+/* 
+int[,] Create2dArray(int rows, int columns, int min, int max)
+{
+    int[,] newArray = new int[rows, columns];
+    for (int i = 0; i < rows; i++)
+    {
+        for (int j = 0; j < columns; j++)
+        {
+            newArray[i, j] = new Random().Next(min, max + 1);
+        }
+    }
+    return newArray;
+}
+
+void ShowArray(int[,] array)
+{
+    for (int i = 0; i < array.GetLength(0); i++)
+    {
+        for (int j = 0; j < array.GetLength(1); j++)
+        {
+            Console.Write(array[i, j] + " ");
+        }
+        Console.WriteLine();
+    }
+    Console.WriteLine();
+}
+
+void ChangeArray(int[,] array2)
+{
+    if (array2.GetLength(0) <= 0 || array2.GetLength(1) <= 0)
+    {
+        Console.WriteLine("It should be square matrix");
+    }
+    else
+    {
+        int[,] array3 = new int[array2.GetLength(1), array2.GetLength(0)];
+        for (int i = 0; i < array2.GetLength(0); i++)
+            for (int j = 0; j < array2.GetLength(1); j++)
+            {
+                array3[j, i] = array2[i, j];
+            }
+    ShowArray(array3);
+    }
+}
+
+Console.Write("Input number of rows: ");
+int user_rows = Convert.ToInt32(Console.ReadLine());
+Console.Write("Input number of columns: ");
+int user_columns = Convert.ToInt32(Console.ReadLine());
+
+Console.Write("Input min possible value: ");
+int user_minValue = Convert.ToInt32(Console.ReadLine());
+Console.Write("Input max possible value: ");
+int user_maxValue = Convert.ToInt32(Console.ReadLine());
+
+int [,] newMatrix = Create2dArray(user_rows, user_columns, user_minValue, user_maxValue);
+ShowArray(newMatrix);
+ChangeArray(newMatrix);
+ */
+
+
+// ПРОГРАММА ОБНУЛЯЕТ СТРОККУ И СТОЛБЕЦ, 
+// НА ПЕРЕСЕЧЕНИИ ПЕРВОГО НАИМЕНЬШЕГО ЭЛЕМЕНТА МАССИВА
+
+/* 
+int[,] Create2dArray(int rows, int columns, int min, int max)
+{
+    int[,] newArray = new int[rows, columns];
+    for (int i = 0; i < rows; i++)
+    {
+        for (int j = 0; j < columns; j++)
+        {
+            newArray[i, j] = new Random().Next(min, max + 1);
+        }
+    }
+    return newArray;
+}
+
+void ShowArray(int[,] array)
+{
+    for (int i = 0; i < array.GetLength(0); i++)
+    {
+        for (int j = 0; j < array.GetLength(1); j++)
+        {
+            Console.Write(array[i, j] + " ");
+        }
+        Console.WriteLine();
+    }
+    Console.WriteLine();
+}
+
+int[] GetMinIndex(int[,] inArray)
+{
+    int iMin = 0;
+    int jMin = 0;
+
+    for (int i = 0; i < inArray.GetLength(0); i++)
+        for (int j = 0; j < inArray.GetLength(1); j++)
+        {
+            if (inArray[i, j] < inArray[iMin, jMin])
+            {
+                iMin = i;
+                jMin = j;
+            }
+        }
+    return new[] { iMin, jMin };
+}
+
+void GetZero(int[,] arrayStart, int[] minInd)
+{
+    for (int i = 0; i < arrayStart.GetLength(0); i++)
+    {
+        arrayStart[i, minInd[1]] = 0;
+        for (int j = 0; j < arrayStart.GetLength(1); j++)
+            arrayStart[minInd[0], j] = 0;
+    }
+    ShowArray(arrayStart);
+}
+
+Console.Write("Input number of rows: ");
+int user_rows = Convert.ToInt32(Console.ReadLine());
+Console.Write("Input number of columns: ");
+int user_columns = Convert.ToInt32(Console.ReadLine());
+
+Console.Write("Input min possible value: ");
+int user_minValue = Convert.ToInt32(Console.ReadLine());
+Console.Write("Input max possible value: ");
+int user_maxValue = Convert.ToInt32(Console.ReadLine());
+
+int [,] firstArray = Create2dArray(user_rows, user_columns, user_minValue, user_maxValue);
+ShowArray(firstArray);
+int [] minIndexArray = GetMinIndex(firstArray);
+GetZero(firstArray, minIndexArray);
+*/
+
+
+
